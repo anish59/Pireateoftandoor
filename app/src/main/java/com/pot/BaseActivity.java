@@ -24,6 +24,15 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
+    public void closeScreen() {
+        finish();
+        doSmoothAnimation();
+    }
+
+    public void doSmoothAnimation() {
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+    }
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
