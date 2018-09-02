@@ -7,20 +7,38 @@
     android:background="#f1f1f1"
     tools:context=".DashBoardActivity">
 
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/imgCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_cart"
+            android:tint="@color/yellow" />
+    </RelativeLayout>
+
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/navigation"
-        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_below="@+id/toolbar"
         android:orientation="vertical" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
         android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
         app:menu="@menu/navigation" />
 
 </RelativeLayout>
