@@ -1,5 +1,6 @@
 package com.pot;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,6 +9,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pot.fragment.FoodMenuFragment;
@@ -36,6 +39,7 @@ public class DashBoardActivity extends AppCompatActivity {
         }
     };
     private FragmentManager fm;
+    private ImageView imgCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +47,20 @@ public class DashBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dash_board);
 
         mTextMessage = (TextView) findViewById(R.id.message);
+        imgCart = (ImageView) findViewById(R.id.imgCart);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         fm = getSupportFragmentManager();
 
         pushFragment(new FoodMenuFragment());
+
+        imgCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashBoardActivity.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void pushFragment(Fragment fragment) {
