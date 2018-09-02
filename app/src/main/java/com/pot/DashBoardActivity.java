@@ -3,9 +3,14 @@ package com.pot;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import com.pot.fragment.FoodMenuFragment;
 
 public class DashBoardActivity extends AppCompatActivity {
 
@@ -30,6 +35,7 @@ public class DashBoardActivity extends AppCompatActivity {
             return false;
         }
     };
+    private FragmentManager fm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +45,19 @@ public class DashBoardActivity extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        fm = getSupportFragmentManager();
+
+        pushFragment(new FoodMenuFragment());
     }
 
+    public void pushFragment(Fragment fragment) {
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.container, fragment);
+        ft.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

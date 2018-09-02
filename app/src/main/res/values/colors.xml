@@ -8,4 +8,45 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 
+
+    <color name="blue">#2d87ff</color>
+    <color name="dark_blue">#3B5A98</color>
+    <color name="darkBlue">#025EDC</color>
+    <color name="borderBlue">#0044FF</color>
+
+
+    <color name="colorInfo">#29B6F6</color>
+    <color name="colorSuccess">#66BB6A</color>
+    <color name="colorWarning">#FFA726</color>
+    <color name="colorError">#EF5350</color>
+    <color name="red">#FFC73D40</color>
+
+    <color name="transparent">#00FFFFFF</color>
+    <color name="darkGreen">#689F38</color>
+    <color name="darkColor">#323232</color>
+    <color name="darkColor2">#232323</color>
+    <color name="selectedFooter">#8FB951</color>
+    <color name="green">#78CB90</color>
+    <color name="lightGray">#989898</color>
+    <color name="darkGray">#FF161416</color>
+    <color name="darkBlack">#FF020202</color>
+    <color name="darkGray2">#25262a</color>
+    <color name="darkGray3">#FF252629</color>
+
+    <color name="btn_cancel_color">#999999</color>
+    <color name="btn_confirm_color">#303F9F</color>
+
+
+    <color name="progress_gray">#FFD8D8D8</color>
+    <color name="progress_gray_dark">#FF383838</color>
+    <color name="default_blue_light">#ff33b5e5</color>
+    <color name="off_white">#e5e5e5</color>
+    <color name="off_white2">#b2b2b2</color>
+    <color name="intro_blue">#0D469E</color>
+    <color name="intro_cyan">#009285</color>
+    <color name="intro_green">#2D7A31</color>
+    <color name="intro_grey">#404040</color>
+    <color name="intro_orange">#E14F00</color>
+    <color name="intro_red">#B31B1B</color>
+
 </resources>
