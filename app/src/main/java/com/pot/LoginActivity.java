@@ -5,6 +5,8 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,6 +30,9 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Window w = getWindow(); // in Activity's onCreate() for instance
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         context = this;
         init();
 
@@ -62,7 +67,14 @@ public class LoginActivity extends BaseActivity {
         txtSignUP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Functions.fireIntent(LoginActivity.this, SignUpActivity.class, false);
+                Functions.fireIntent(LoginActivity.this, SignUpActivity.class, true);
+            }
+        });
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Functions.fireIntent(LoginActivity.this, DashBoardActivity.class, true);
+                finish();
             }
         });
     }

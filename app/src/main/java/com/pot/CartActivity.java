@@ -9,12 +9,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.pot.adapter.CartAdapter;
+import com.pot.helper.Functions;
 import com.pot.model.Food;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartActivity extends AppCompatActivity {
+public class CartActivity extends BaseActivity {
 
     private android.widget.ImageView imgBack;
     private android.widget.RelativeLayout toolbar;
@@ -26,7 +27,6 @@ public class CartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
         this.rvCart = (RecyclerView) findViewById(R.id.rvCart);
-        this.toolbar = (RelativeLayout) findViewById(R.id.toolbar);
         this.imgBack = (ImageView) findViewById(R.id.imgBack);
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,5 +43,17 @@ public class CartActivity extends AppCompatActivity {
         adapter = new CartAdapter(this,list);
         rvCart.setAdapter(adapter);
 
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        Functions.fireIntent(this,false);
     }
 }
